@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 export const Paso3 = (props) => {
-  const { restarContador, sumarContador, usuario, setUsuario } = props;
+  const { restarContador, sumarContador, usuario } = props;
   const [intentoLogin, setIntentoLogin] = useState("");
   const [intentoPass, setIntentoPass] = useState("");
   const [mensaje, setMensaje] = useState("");

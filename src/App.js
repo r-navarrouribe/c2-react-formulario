@@ -29,7 +29,6 @@ function App() {
           restarContador={restarContador}
           usuario={usuario}
           setUsuario={setUsuario}
-          setContador={setContador}
         />
       </div>
     </>

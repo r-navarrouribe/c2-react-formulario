@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 export const Success = (props) => {
   const {
     usuario: { nombre, apellidos, fecha, email, usuario, pass },
@@ -27,4 +28,8 @@ export const Success = (props) => {
       </button>
     </>
   );
+};
+
+Success.propTypes = {
+  usuario: PropTypes.object.isRequired,
 };

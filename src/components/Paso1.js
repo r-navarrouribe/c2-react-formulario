@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Paso1 = (props) => {
   const { sumarContador, usuario, setUsuario } = props;
-  console.log(usuario);
+  const [edad, setEdad] = useState("1");
+  useEffect(() => {
+    setEdad(new Date() - new Date(usuario.fecha));
+  }, [usuario.fecha]);
   return (
     <form onSubmit={sumarContador}>
       <fieldset className="campo-form d-flex justify-content-center alight-items-center flex-column">
@@ -42,7 +45,7 @@ export const Paso1 = (props) => {
             }
             required
           />
-          <span>Edad: 20 años</span>
+          <span>Edad: {Math.floor(edad / 31556926000)} años</span>
         </div>
         <div className="input-campo">
           <label htmlFor="email">Email</label>

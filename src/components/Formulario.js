@@ -37,7 +37,6 @@ export const Formulario = (props) => {
           sumarContador={sumarContador}
           restarContador={restarContador}
           usuario={usuario}
-          setUsuario={setUsuario}
         />
       );
     } else {
