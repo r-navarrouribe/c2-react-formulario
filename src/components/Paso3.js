@@ -65,5 +65,4 @@ Paso3.propTypes = {
   sumarContador: PropTypes.func.isRequired,
   restarContador: PropTypes.func.isRequired,
   usuario: PropTypes.object.isRequired,
-  setUsuario: PropTypes.func.isRequired,
 };
