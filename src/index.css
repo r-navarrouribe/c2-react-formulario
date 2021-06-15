@@ -39,3 +39,7 @@ code {
 .boton {
   margin-block: 10px;
 }
+
+.off {
+  color: transparent;
+}

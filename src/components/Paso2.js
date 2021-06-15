@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 export const Paso2 = (props) => {
   const { sumarContador, restarContador, usuario, setUsuario } = props;
+  const [confirmaContrasenya, setConfirmaContrasenya] = useState("");
   return (
     <form onSubmit={sumarContador}>
       <fieldset className="campo-form d-flex flex-column">
@@ -11,6 +13,9 @@ export const Paso2 = (props) => {
             type="text"
             id="usuario"
             placeholder="Nombre de usuario"
+            onChange={(event) =>
+              setUsuario({ ...usuario, usuario: event.target.value })
+            }
             required
           />
         </div>
@@ -20,6 +25,9 @@ export const Paso2 = (props) => {
             type="password"
             id="password"
             placeholder="Contraseña"
+            onChange={(event) =>
+              setUsuario({ ...usuario, pass: event.target.value })
+            }
             required
           />
         </div>
@@ -29,7 +37,11 @@ export const Paso2 = (props) => {
             type="password"
             id="password-repeat"
             placeholder="Repite la contraseña"
+            onChange={(event) => setConfirmaContrasenya(event.target.value)}
           />
+          <p className={confirmaContrasenya === usuario.pass ? "off" : ""}>
+            Las contraseñas deben coincidir
+          </p>
         </div>
         <button
           type="button"
@@ -38,7 +50,11 @@ export const Paso2 = (props) => {
         >
           Anterior
         </button>
-        <button type="submit" className="boton btn btn-primary">
+        <button
+          type="submit"
+          className="boton btn btn-primary"
+          disabled={confirmaContrasenya === usuario.pass ? false : true}
+        >
           Siguiente
         </button>
       </fieldset>
@@ -49,6 +65,6 @@ export const Paso2 = (props) => {
 Paso2.propTypes = {
   sumarContador: PropTypes.func.isRequired,
   restarContador: PropTypes.func.isRequired,
-  usuario: PropTypes.array.isRequired,
+  usuario: PropTypes.object.isRequired,
   setUsuario: PropTypes.func.isRequired,
 };

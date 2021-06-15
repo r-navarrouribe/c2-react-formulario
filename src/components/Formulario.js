@@ -3,10 +3,16 @@ import PropTypes from "prop-types";
 import { Paso1 } from "./Paso1";
 import { Paso2 } from "./Paso2";
 import { Paso3 } from "./Paso3";
-
+import { Success } from "./Success";
 export const Formulario = (props) => {
-  const { contador, sumarContador, restarContador, usuario, setUsuario } =
-    props;
+  const {
+    contador,
+    setContador,
+    sumarContador,
+    restarContador,
+    usuario,
+    setUsuario,
+  } = props;
   const showPaso = () => {
     if (contador === 0) {
       return (
@@ -25,12 +31,21 @@ export const Formulario = (props) => {
           setUsuario={setUsuario}
         />
       );
-    } else {
+    } else if (contador === 2) {
       return (
         <Paso3
+          sumarContador={sumarContador}
           restarContador={restarContador}
           usuario={usuario}
           setUsuario={setUsuario}
+        />
+      );
+    } else {
+      return (
+        <Success
+          usuario={usuario}
+          contador={contador}
+          setContador={setContador}
         />
       );
     }
@@ -47,6 +62,6 @@ Formulario.propTypes = {
   contador: PropTypes.number.isRequired,
   sumarContador: PropTypes.func.isRequired,
   restarContador: PropTypes.func.isRequired,
-  usuario: PropTypes.array.isRequired,
+  usuario: PropTypes.object.isRequired,
   setUsuario: PropTypes.func.isRequired,
 };
