@@ -24,13 +24,19 @@ code {
 
 .input-campo label {
   margin-right: 10px;
+  display: flex;
 }
 
 .campo-form {
   border: 2px solid rgb(4, 4, 146);
   padding: 15px;
+  width: 600px;
 }
 
 .titulo-campo {
   text-align: center;
+}
+
+.boton {
+  margin-block: 10px;
 }

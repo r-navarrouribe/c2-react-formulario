@@ -1,4 +1,5 @@
-export const Paso1 = () => {
+export const Paso1 = (props) => {
+  const { sumarContador } = props;
   return (
     <fieldset className="campo-form d-flex justify-content-center alight-items-center flex-column">
       <legend className="titulo-campo">Datos personales</legend>
@@ -19,6 +20,13 @@ export const Paso1 = () => {
         <label htmlFor="email">Email</label>
         <input type="email" id="email" placeholder="Escribe tu Email" />
       </div>
+      <button
+        type="button"
+        className="boton btn btn-primary"
+        onClick={sumarContador}
+      >
+        Siguiente
+      </button>
     </fieldset>
   );
 };
