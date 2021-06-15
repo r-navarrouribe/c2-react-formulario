@@ -5,8 +5,10 @@ export const Paso3 = (props) => {
   const [intentoLogin, setIntentoLogin] = useState("");
   const [intentoPass, setIntentoPass] = useState("");
   const [mensaje, setMensaje] = useState("");
-  const loginFail = () => {
+  const loginFail = (e) => {
+    alert("El nombre de usuario y/o la contraseña no son correctos");
     setMensaje("El nombre de usuario y/o la contraseña no son correctos");
+    e.preventDefault();
   };
   return (
     <form
