@@ -3,6 +3,9 @@ import { Formulario } from "./components/Formulario";
 import { useState } from "react";
 
 function App() {
+  const [usuario, setUsuario] = useState([
+    { nombre: "", apellidos: "", fecha: "", email: "", usuario: "", pass: "" },
+  ]);
   const [contador, setContador] = useState(0);
   const sumarContador = () => {
     setContador(contador + 1);
@@ -19,6 +22,8 @@ function App() {
           setContador={setContador}
           sumarContador={sumarContador}
           restarContador={restarContador}
+          usuario={usuario}
+          setUsuario={setUsuario}
         />
       </div>
     </>

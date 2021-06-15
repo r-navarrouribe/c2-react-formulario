@@ -19,12 +19,11 @@ code {
 .input-campo {
   margin-block: 15px;
   display: flex;
-  justify-content: left;
+  flex-direction: column;
 }
 
 .input-campo label {
   margin-right: 10px;
-  display: flex;
 }
 
 .campo-form {
