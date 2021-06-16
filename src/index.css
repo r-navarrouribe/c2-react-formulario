@@ -26,10 +26,17 @@ code {
   margin-right: 10px;
 }
 
+.formulario {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .campo-form {
   border: 2px solid rgb(4, 4, 146);
   padding: 15px;
-  width: 600px;
+  width: 60%;
 }
 
 .titulo-campo {
@@ -42,4 +49,8 @@ code {
 
 .off {
   color: transparent;
+}
+
+.pasos {
+  width: 100%;
 }

@@ -8,7 +8,7 @@ export const Paso1 = (props) => {
     setEdad(new Date() - new Date(usuario.fecha));
   }, [usuario.fecha]);
   return (
-    <form onSubmit={sumarContador}>
+    <form className="formulario" onSubmit={sumarContador}>
       <fieldset className="campo-form d-flex justify-content-center alight-items-center flex-column">
         <legend className="titulo-campo">Datos personales</legend>
         <div className="input-campo">
